@@ -1,0 +1,14 @@
+services:
+  sonarqube:
+    build:
+      context: ./sonarqube
+    ports:
+      - "9000:9000"
+    environment:
+      SQ_PASSWORD: sonar
+      SQ_PROJECT_NAME: My Code
+      SQ_PROJECT_KEY: mycode
+      SQ_PROJECT_TOKEN_NAME: my-code-token
+    volumes:
+      - ~/sonarqube-quickstart:/tmp/sonarqube
+    restart: no
